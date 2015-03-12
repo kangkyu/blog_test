@@ -10,4 +10,14 @@ class PostsController < ApplicationController
     @post.save
     redirect_to post_url(@post)
   end
+  def update
+    @post = Post.find(params[:id])
+    @post.update(params.require(:post).permit(:title, :body))
+    redirect_to post_url(@post)
+  end
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_url
+  end
 end

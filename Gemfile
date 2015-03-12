@@ -49,3 +49,12 @@ group :test do
 
 end
 
+group :development do
+
+  gem 'guard'
+  gem 'guard-minitest', '~> 2.4.4'
+end
+
+group :test do
+  gem 'ruby-prof'
+end
