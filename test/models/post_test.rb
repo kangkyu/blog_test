@@ -6,9 +6,11 @@ class PostTest < ActiveSupport::TestCase
   # end
 
   test "Add Post" do
-    post = Post.create(title: "Hello World", body: "Hello KangKyu, This is the world.")
-
-    assert_difference 'Post.count'
+    assert_difference 'Post.count' do
+      post = Post.new(title: "Hello World", body: "Hello KangKyu, This is the world.")
+      post.save
+    end
+    
   end
 
 end
